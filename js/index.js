@@ -5,7 +5,7 @@ function retornoHTML(producto) {
     return `<div class="row justify-content-center">
         <div class="col-lg-4 col-12 mt-5">
       <div class="card">
-          <img src=${producto.imagen} class="card-img-top img-thumbnail img-fluid"
+          <img src=${producto.imagen}class="card-img-top img-thumbnail img-fluid"
               alt="vela de soja Pecera">
           <div class="card-body text-center">
               <h5 class="card-title text-light fs-3">${producto.nombre}</h5>
