@@ -1,9 +1,10 @@
-const tabla = document.querySelector(".table tbody")
+const tabla = document.querySelector("tbody")
 
-function prodsTabla(prods) {
+function agruparCarrito(prod) {
     return `<tr>
-                <td>${prods.nombre}</td>
-                <td>$ ${prods.precio.toLocaleString()}</td>
+                <th scope="row">${prod.cod}</th>
+                <td>${prod.nombre}</td>
+                <td>$ ${prod.precio.toLocaleString()}</td>
                 <td>❌</td>
             </tr>`
 }
@@ -11,10 +12,10 @@ function prodsTabla(prods) {
 function armarCarrito() {
     tabla.innerHTML = ""
     if (carritoDeProductos.length > 0) {
-        carritoDeProductos.forEach((prods) => {
-            tabla.innerHTML += prodsTabla(prods)
+        carritoDeProductos.forEach((prod) => {
+            tabla.innerHTML += agruparCarrito(prod)
         })
     }
 }
 
-armarCarrito()
+armarCarrito() 
