@@ -1,3 +1,4 @@
+const numeradorCarrito = document.querySelector("span#cantC")
 const contenedor = document.querySelector("div#contenedor.contenedor")
 const logoCarrito = document.getElementById("logCarrito")
 const barraBusqueda = document.querySelector("input")
@@ -5,6 +6,13 @@ const barraBusqueda = document.querySelector("input")
 logoCarrito.addEventListener("mouseover", () => {
     logoCarrito.title = "Carrito"
 })
+
+function visualizarNumCarrito() {
+    numeradorCarrito.textContent = carritoDeProductos.length
+}
+
+carritoDeProductos.length > 0 && visualizarNumCarrito()
+
 
 function retornarProdsDeHTML(producto) {
     return `<div class="row justify-content-center">
@@ -30,6 +38,7 @@ function mandarACarrito() {
             carritoDeProductos.push(producto)
             localStorage.setItem("CarritoDeProductos", JSON.stringify(carritoDeProductos))
             console.table(carritoDeProductos)
+            visualizarNumCarrito()
         })
 
     })
