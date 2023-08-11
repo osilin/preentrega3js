@@ -6,11 +6,7 @@ const listaDeProductos = [{ cod: 1, nombre: "Vela de soja -modelo pecera-", imag
 { cod: 6, nombre: "Piedras para defumación", imagen: "images/defumacionSmadre.png", precio: 670, categoria: "Limpieza-aromaterapia" }]
 
 function traerCarrito (){
-    if (localStorage.getItem("CarritoDeProductos") !== null){
-        return JSON.parse(localStorage.getItem("CarritoDeProductos"))
-    } else {
-        return []
-    }
+    return JSON.parse(localStorage.getItem("CarritoDeProductos")) || []
 }
 
 
